@@ -31,7 +31,6 @@ class Activity_onboarding : AppCompatActivity() {
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
         }
-
  */
     }
 
@@ -42,6 +41,5 @@ class Activity_onboarding : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
-
-/*
+*/
 }
