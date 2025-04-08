@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -14,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Icono -->
+
     <ImageView
         android:id="@+id/icon"
         android:layout_width="32dp"
@@ -28,7 +29,7 @@
         app:layout_constraintTop_margin="16dp"
         app:layout_constraintTop_toTopOf="@id/header" />
 
-    <!-- Título -->
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -44,7 +45,7 @@
         app:layout_constraintTop_margin="16dp"
         app:layout_constraintTop_toBottomOf="@id/icon" />
 
-    <!-- Subtítulo -->
+
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
@@ -117,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@id/passwordInput">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/LButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="?attr/materialButtonOutlinedStyle"
@@ -127,10 +128,12 @@
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
-    <TextView
-        android:id="@+id/resetPasswordText"
-        android:layout_width="151dp"
-        android:layout_height="26dp"
+
+    <Button
+        style="@style/Widget.Material3.Button.TextButton"
+        android:id="@+id/resetPasswordBt"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/Lrestablece"
@@ -138,10 +141,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/registerText"
-        android:layout_width="106dp"
-        android:layout_height="28dp"
+    <Button
+        style="@style/Widget.Material3.Button.TextButton"
+        android:id="@+id/registerBt"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:layout_weight="16"
@@ -149,5 +153,6 @@
         android:textColor="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

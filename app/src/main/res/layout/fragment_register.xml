@@ -142,7 +142,7 @@
         app:layout_constraintTop_toBottomOf="@id/etContrasenaRegister">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/LButton"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
