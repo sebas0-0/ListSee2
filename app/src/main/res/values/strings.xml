@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">ListSee</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="todo">TODO</string>
+    <string name="titulo">¡Bienvenido!</string>
+    <string name="subtitulo">Regístrate para continuar</string>
+    <string name="Rname">Nombre:</string>
+    <string name="Rcorreo">Correo:</string>
+    <string name="Rcontraseña">Contraseña:</string>
+    <string name="Rregistrar">Registrar</string>
+    <string name="Lsecion">Inicia sesión para continuar</string>
+    <string name="Lcorreo">Correo:</string>
+    <string name="Lcontraseña">Contraseña:</string>
+    <string name="Lingresar">Ingresar</string>
+    <string name="Lregistrarse">Registrarse</string>
+    <string name="Lrestablece">Restablecer contraseña</string>
+
 </resources>
