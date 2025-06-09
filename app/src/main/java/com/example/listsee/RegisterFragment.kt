@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.listsee.databinding.FragmentRegisterBinding
+import com.example.listsee.utils.FragmentCommunicator
+import com.example.listsee.viewModel.RegisterViewModel
 
 
 /**
@@ -19,6 +22,8 @@ class RegisterFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val viewModel by viewModels<RegisterViewModel>()
+    private lateinit var communicator: FragmentCommunicator
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +31,9 @@ class RegisterFragment : Fragment() {
     ): View {
 
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        communicator = requireActivity() as ActivityOnboarding
         setview()
+        setupObservers()
         return binding.root
 
     }
@@ -60,8 +67,20 @@ class RegisterFragment : Fragment() {
             }
 
             if (nombre.isNotEmpty() && correo.isNotEmpty() && contrasena.isNotEmpty()) {
-                // Aquí va la lógica para continuar el proceso de registro
-                // Por ejemplo: guardar en base de datos, navegar, etc.
+                viewModel.requestRegister(binding.inputCorreo.text.toString(),
+                    binding.inputContrasena.text.toString()
+                )
+            }
+        }
+    }
+
+    private fun setupObservers() {
+        viewModel.loaderState.observe(viewLifecycleOwner) { loaderState ->
+            communicator.showLoader(loaderState)
+        }
+        viewModel.createdUser.observe(viewLifecycleOwner) { createdUser ->
+            if (createdUser) {
+                findNavController().navigate(R.id.action_RegisterFragment_to_LoginFragment)
             }
         }
     }
