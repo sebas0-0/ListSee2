@@ -31,9 +31,38 @@ class RegisterFragment : Fragment() {
 
     }
 
-    private fun setview(){
+    private fun setview() {
         binding.icon.setOnClickListener {
             findNavController().navigate(R.id.action_RegisterFragment_to_LoginFragment)
+        }
+
+        binding.LButton.setOnClickListener {
+            val nombre = binding.inputNombre.text.toString().trim()
+            val correo = binding.inputCorreo.text.toString().trim()
+            val contrasena = binding.inputContrasena.text.toString().trim()
+
+            if (nombre.isEmpty()) {
+                binding.etNombre.error = "El nombre es obligatorio"
+            } else {
+                binding.etNombre.error = null
+            }
+
+            if (correo.isEmpty()) {
+                binding.etCorreoRegister.error = "El correo es obligatorio"
+            } else {
+                binding.etCorreoRegister.error = null
+            }
+
+            if (contrasena.isEmpty()) {
+                binding.etContrasenaRegister.error = "La contraseña es obligatoria"
+            } else {
+                binding.etContrasenaRegister.error = null
+            }
+
+            if (nombre.isNotEmpty() && correo.isNotEmpty() && contrasena.isNotEmpty()) {
+                // Aquí va la lógica para continuar el proceso de registro
+                // Por ejemplo: guardar en base de datos, navegar, etc.
+            }
         }
     }
 

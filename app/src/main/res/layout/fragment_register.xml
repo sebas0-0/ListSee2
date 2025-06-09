@@ -82,6 +82,7 @@
         app:layout_constraintTop_toBottomOf="@id/headerRegister">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -100,9 +101,9 @@
         app:layout_constraintTop_toBottomOf="@id/etNombre">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputCorreo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -121,10 +122,9 @@
         app:layout_constraintTop_toBottomOf="@id/etCorreoRegister">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputContrasena"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
