@@ -1,6 +1,6 @@
 package com.example.listsee
 
-import android.app.ListActivity
+import com.example.listsee.ListActivity
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -69,6 +69,15 @@ class LoginFragment : Fragment() {
     private fun setupObservers() {
         viewModel.loaderState.observe(viewLifecycleOwner) { loaderState ->
             communicator.showLoader(loaderState)
+        }
+        viewModel.sessionValid.observe(viewLifecycleOwner) { sessionValid ->
+            if (sessionValid) {
+                val intent = Intent(activity, ListActivity::class.java)
+                startActivity(intent)
+                activity?.finish()
+            } else {
+                Toast.makeText(activity, "Ingreso invalido", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
