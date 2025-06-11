@@ -12,7 +12,7 @@ import com.example.listsee.utils.FragmentCommunicator
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class ListFragment : Fragment() {
 
     private var _binding: FragmentListBinding? = null
 
@@ -28,8 +28,15 @@ class FirstFragment : Fragment() {
 
         _binding = FragmentListBinding.inflate(inflater, container, false)
         communicator = requireActivity() as ListActivity
+        setupView()
         return binding.root
 
+    }
+
+    private fun setupView() {
+        binding.addTaskButton.setOnClickListener {
+            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+        }
     }
 
     override fun onDestroyView() {

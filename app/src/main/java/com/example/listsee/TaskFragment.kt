@@ -11,7 +11,7 @@ import com.example.listsee.databinding.FragmentTaskBinding
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class SecondFragment : Fragment() {
+class TaskFragment : Fragment() {
 
     private var _binding: FragmentTaskBinding? = null
 
@@ -25,8 +25,15 @@ class SecondFragment : Fragment() {
     ): View {
 
         _binding = FragmentTaskBinding.inflate(inflater, container, false)
+        setupView()
         return binding.root
 
+    }
+
+    private fun setupView() {
+        binding.backButton.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }
     }
 
     override fun onDestroyView() {

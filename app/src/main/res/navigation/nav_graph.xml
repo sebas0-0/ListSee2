@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.listsee.FirstFragment"
+        android:name="com.example.listsee.ListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_list">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.listsee.SecondFragment"
+        android:name="com.example.listsee.TaskFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_task">
 
