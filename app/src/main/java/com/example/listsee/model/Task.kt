@@ -1,5 +1,13 @@
 package com.example.listsee.model
 
-data class Task(val id: String, val nombre: String, val descripcion: String, val fecha: String)
+import java.util.Date
+
+data class Task(
+                val id: String,
+                val name: String,
+                val description: String,
+                val date: Date,
+                val userId: String
+)
 
 

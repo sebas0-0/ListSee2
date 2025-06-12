@@ -33,6 +33,19 @@ class TaskFragment : Fragment() {
     private fun setupView() {
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            binding.addTaskButton.setOnClickListener {
+                val nombre = binding.taskName.text.toString()
+                val descripcion = binding.taskDescription.text.toString()
+                val fecha = binding.taskDate.text.toString()
+                viewModel.addTask(nombre, descripcion, fecha)
+            }
+
+            // Observa cambios
+            viewModel.tasks.observe(viewLifecycleOwner) { tasks ->
+                // aquí actualizas tu RecyclerView o UI con la lista de tareas
+            }
+
+            viewModel.loadTasks()
         }
     }
 
