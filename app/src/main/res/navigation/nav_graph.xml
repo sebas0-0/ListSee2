@@ -3,26 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/TaskFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.listsee.ListFragment"
+        android:id="@+id/TaskFragment"
+        android:name="com.example.listsee.views.task.ListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_list">
 
         <action
-            android:id="@+id/action_AddTaskFragment_to_TasksFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_TasksFragment_to_AddTaskFragment"
+            app:destination="@id/AddTaskFragment" />
+
+        <action
+            android:id="@+id/action_TasksFragment_to_TaskDetailFragment"
+            app:destination="@id/DetailFragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.listsee.TaskFragment"
+        android:id="@+id/AddTaskFragment"
+        android:name="com.example.listsee.views.task.AddTaskFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_task">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_AddTaskFragment_to_TasksFragment"
+            app:destination="@id/TaskFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/DetailFragment"
+        android:name="com.example.listsee.views.task.TaskDetailFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_task_detail">
+
+        <argument
+            android:name="taskId"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/action_TaskDetailFragment_to_TasksFragment"
+            app:destination="@id/TaskFragment" />
     </fragment>
 </navigation>

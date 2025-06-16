@@ -14,7 +14,7 @@ import kotlinx.coroutines.tasks.await
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModelAdd
+@HiltViewModel
 class LoginViewModel @Inject constructor(
     private val repository: UserRepository
 ): ViewModel() {

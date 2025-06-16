@@ -1,13 +1,13 @@
 package com.example.listsee.adapters
 
-import com.example.listsee.model.Task
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.listsee.databinding.TaskItemBinding
 import com.example.listsee.R
+import com.example.listsee.databinding.TaskItemBinding
+import com.example.listsee.model.Task
 
 class TaskAdapter(
     private val tasks: MutableList<Task>,
@@ -19,14 +19,15 @@ class TaskAdapter(
         val binding = TaskItemBinding.bind(view)
 
         fun setUpUI(task: Task) {
-            binding.nombre.text = task.nombre
-            binding.description.text = task.descripcion
-            binding.fecha.text = task.fecha
+            binding.nombre.text = task.name
+            binding.description.text = task.description
+            binding.fecha.text = task.date.toString()
             binding.itemContainerView.setOnClickListener {
                 onItemClick(task.id)
             }
         }
     }
+
     fun add(taskItems: List<Task>) {
         tasks.addAll(taskItems)
         notifyDataSetChanged()
@@ -45,5 +46,4 @@ class TaskAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setUpUI(tasks[position])
     }
-
 }

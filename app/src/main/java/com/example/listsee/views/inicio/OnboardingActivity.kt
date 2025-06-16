@@ -1,4 +1,4 @@
-package com.example.listsee
+package com.example.listsee.views.inicio
 
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,7 @@ import com.example.listsee.utils.FragmentCommunicator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ActivityOnboarding : AppCompatActivity(), FragmentCommunicator {
+class OnboardingActivity : AppCompatActivity(), FragmentCommunicator {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityOnboardingBinding

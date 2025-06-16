@@ -13,33 +13,34 @@ import kotlinx.coroutines.tasks.await
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModelAdd
+@HiltViewModel
 class RegisterViewModel @Inject constructor(
     private val repository: UserRepository
 ): ViewModel()
-private val _loaderState = MutableLiveData<Boolean>()
-    val loaderState: LiveData<Boolean>
-        get() = _loaderState
+{
+    private val _loaderState = MutableLiveData<Boolean>()
+        val loaderState: LiveData<Boolean>
+            get() = _loaderState
 
-    private val _createdUser = MutableLiveData<Boolean>()
-    val createdUser: LiveData<Boolean>
-        get() = _createdUser
+        private val _createdUser = MutableLiveData<Boolean>()
+        val createdUser: LiveData<Boolean>
+            get() = _createdUser
 
-    fun requestRegister(email:String,password:String){
-        _loaderState.value = true
-        _createdUser.value = false
+        fun requestRegister(email:String,password:String){
+            _loaderState.value = true
+            _createdUser.value = false
 
-        viewModelScope.launch {
-            when(val result = repository.register(email, password)) {
-                    is ResultWrapper.Success -> {
-                _loaderState.value = false
-                _createdUser.value = true
-            }
-                is ResultWrapper.Error -> {
+            viewModelScope.launch {
+                when(val result = repository.register(email, password)) {
+                        is ResultWrapper.Success -> {
                     _loaderState.value = false
-                    val errorMessage = result.exception.message
+                    _createdUser.value = true
+                }
+                    is ResultWrapper.Error -> {
+                        _loaderState.value = false
+                        val errorMessage = result.exception.message
+                    }
                 }
             }
         }
-    }
 }

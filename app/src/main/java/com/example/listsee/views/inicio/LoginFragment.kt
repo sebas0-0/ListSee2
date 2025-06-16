@@ -1,6 +1,5 @@
-package com.example.listsee
+package com.example.listsee.views.inicio
 
-import com.example.listsee.ListActivity
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.listsee.views.task.ListActivity
+import com.example.listsee.R
 import com.example.listsee.databinding.FragmentLoginBinding
 import com.example.listsee.utils.FragmentCommunicator
 import com.example.listsee.viewModel.LoginViewModel
@@ -29,7 +30,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        communicator = requireActivity() as ActivityOnboarding
+        communicator = requireActivity() as OnboardingActivity
         setupView()
         setupObservers()
         return binding.root

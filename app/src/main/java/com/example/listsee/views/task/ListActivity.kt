@@ -1,16 +1,15 @@
-package com.example.listsee
+package com.example.listsee.views.task
 
 import android.os.Bundle
 import android.view.View
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.listsee.databinding.ActivityListBinding
 import com.example.listsee.utils.FragmentCommunicator
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class ListActivity : AppCompatActivity(), FragmentCommunicator {
 
     private lateinit var appBarConfiguration: AppBarConfiguration

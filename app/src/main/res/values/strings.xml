@@ -22,6 +22,7 @@
     <string name="DescripcionTarea">Descripción</string>
     <string name="FechaTarea">Fecha</string>
     <string name="Cancelar">Cancelar</string>
+    <string name="Eliminar">Eliminar</string>
     <string name="Guardar">Guardar</string>
     <string name="AgregarTarea">Agregar tarea</string>
     <!-- TODO: Remove or change this placeholder text -->
