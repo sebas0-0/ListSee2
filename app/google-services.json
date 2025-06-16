@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "498652313884",
+    "project_id": "listsee-2abae",
+    "storage_bucket": "listsee-2abae.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498652313884:android:574016cf7cc912c90b62d9",
+        "android_client_info": {
+          "package_name": "com.example.listsee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYttKzxWqaxA6KeaJGIEm_e7rMmgh7Qzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
